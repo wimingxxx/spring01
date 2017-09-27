@@ -28,3 +28,4 @@ hs_err_pid*
 .idea/workspace.xml
 out/production/spring01/applicationContext.xml
 web/WEB-INF/classes/
+.idea/preferred-vcs.xml
