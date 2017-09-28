@@ -14,6 +14,7 @@
 
 [SSH与SSM学习之Spring05——Spring属性注入之构造函数注入](blog/05.md)
 
+[SSH与SSM学习之Spring06——Spring属性注入之p名称空间注入](blog/06.md)
 
 ----
 

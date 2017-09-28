@@ -4,14 +4,14 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
 
-    <!--==========set方式注入==============-->
-    <bean name="user1" class="com.qwm.spring1.bean.User">
-        <!--值类型注入：为User对象的name属性赋值wiming, age属性赋值18。调用set方法-->
-        <property name="name" value="wiming"/>
-        <property name="age" value="18"/>
-        <!--引用类型注入：为car属性注入下方配置的car对象-->
-        <property name="car" ref="car"/>
-    </bean>
+    <!--&lt;!&ndash;==========set方式注入==============&ndash;&gt;-->
+    <!--<bean name="user1" class="com.qwm.spring1.bean.User">-->
+        <!--&lt;!&ndash;值类型注入：为User对象的name属性赋值wiming, age属性赋值18。调用set方法&ndash;&gt;-->
+        <!--<property name="name" value="wiming"/>-->
+        <!--<property name="age" value="18"/>-->
+        <!--&lt;!&ndash;引用类型注入：为car属性注入下方配置的car对象&ndash;&gt;-->
+        <!--<property name="car" ref="car"/>-->
+    <!--</bean>-->
 
     <!--Car配置-->
     <bean name="car" class="com.qwm.spring1.bean.Car">
@@ -48,23 +48,23 @@
         <!--<property name="car" ref="car"/>-->
     <!--</bean>-->
 
-    <!--通过constructor-arg 中的ref指定引用-->
-    <!--这里会调用 User(String name, int age, Car car)-->
-    <bean name="user5" class="com.qwm.spring1.bean.User">
-        <constructor-arg name="name" value="xiaoming"/>
-        <constructor-arg name="age" value="18"/>
-        <constructor-arg name="car" ref="car"/>
-    </bean>
+    <!--&lt;!&ndash;通过constructor-arg 中的ref指定引用&ndash;&gt;-->
+    <!--&lt;!&ndash;这里会调用 User(String name, int age, Car car)&ndash;&gt;-->
+    <!--<bean name="user5" class="com.qwm.spring1.bean.User">-->
+        <!--<constructor-arg name="name" value="xiaoming"/>-->
+        <!--<constructor-arg name="age" value="18"/>-->
+        <!--<constructor-arg name="car" ref="car"/>-->
+    <!--</bean>-->
 
-    <!--&lt;!&ndash;=============p名称空间注入测试============&ndash;&gt;-->
+    <!--=============p名称空间注入测试============-->
 
-    <!--&lt;!&ndash; p名称空间注入, 走set方法-->
-        <!--1.导入P名称空间  xmlns:p="http://www.springframework.org/schema/p"-->
-        <!--2.使用p:属性完成注入-->
-            <!--|-值类型: p:属性名="值"-->
-            <!--|-对象类型: p:属性名-ref="bean名称"-->
-     <!--&ndash;&gt;-->
-    <!--<bean name="user6" class="com.qwm.spring1.bean.User" p:age="20" p:name="wenming" p:car-ref="car"/>-->
+    <!-- p名称空间注入, 走set方法
+        1.导入P名称空间  xmlns:p="http://www.springframework.org/schema/p"
+        2.使用p:属性完成注入
+            |-值类型: p:属性名="值"
+            |-对象类型: p:属性名-ref="bean名称"
+     -->
+    <bean name="user6" class="com.qwm.spring1.bean.User" p:age="20" p:name="wenming" p:car-ref="car"/>
 
     <!--&lt;!&ndash;=============spel注入============&ndash;&gt;-->
    <!--&lt;!&ndash; spel注入: spring Expression Language sping表达式语言&ndash;&gt;-->
