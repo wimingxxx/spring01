@@ -10,6 +10,10 @@
 
 [SSH与SSM学习之Spring03——Spring创建对象的方式](blog/03.md)
 
+[SSH与SSM学习之Spring04——Spring属性注入之set方法注入](blog/04.md)
+
+[SSH与SSM学习之Spring05——Spring属性注入之构造函数注入](blog/05.md)
+
 
 ----
 

@@ -25,28 +25,28 @@
     <!-- name属性: 构造函数的参数名 -->
     <!-- index属性: 构造函数的参数索引 -->
     <!-- type属性: 构造函数的参数类型-->
+    <!--User(int age, String name)-->
+    <!--<bean name="user2" class="com.qwm.spring1.bean.User">-->
+        <!--<constructor-arg name="name" value="qiwenming"/>-->
+        <!--<constructor-arg name="age" value="18"/>-->
+        <!--<property name="car" ref="car"/>-->
+    <!--</bean>-->
 
-    <bean name="user2" class="com.qwm.spring1.bean.User">
-        <constructor-arg name="name" value="qiwenming"/>
-        <constructor-arg name="age" value="18"/>
-        <property name="car" ref="car"/>
-    </bean>
+    <!--&lt;!&ndash;使用 index 来指定参数的索引&ndash;&gt;-->
+    <!--&lt;!&ndash;这里会调用  User(String name, int age, Car car)&ndash;&gt;-->
+    <!--<bean name="user3" class="com.qwm.spring1.bean.User">-->
+        <!--<constructor-arg name="name" value="qiwenming" index="0"/>-->
+        <!--<constructor-arg name="age" value="18"/>-->
+        <!--<property name="car" ref="car"/>-->
+    <!--</bean>-->
 
-    <!--使用 index 来指定参数的索引-->
-    <!--这里会调用  User(String name, int age, Car car)-->
-    <bean name="user3" class="com.qwm.spring1.bean.User">
-        <constructor-arg name="name" value="qiwenming" index="0"/>
-        <constructor-arg name="age" value="18"/>
-        <property name="car" ref="car"/>
-    </bean>
-
-    <!--使用 type 构造函数的参数类型-->
-    <!--这里会调用  User(int name, int age)-->
-    <bean name="user4" class="com.qwm.spring1.bean.User">
-        <constructor-arg name="name" value="2014" type="int"/>
-        <constructor-arg name="age" value="18"/>
-        <property name="car" ref="car"/>
-    </bean>
+    <!--&lt;!&ndash;使用 type 构造函数的参数类型&ndash;&gt;-->
+    <!--&lt;!&ndash;这里会调用  User(int name, int age)&ndash;&gt;-->
+    <!--<bean name="user4" class="com.qwm.spring1.bean.User">-->
+        <!--<constructor-arg name="name" value="2014" type="int" index="0"/>-->
+        <!--<constructor-arg name="age" value="18"/>-->
+        <!--<property name="car" ref="car"/>-->
+    <!--</bean>-->
 
     <!--通过constructor-arg 中的ref指定引用-->
     <!--这里会调用 User(String name, int age, Car car)-->
@@ -56,75 +56,75 @@
         <constructor-arg name="car" ref="car"/>
     </bean>
 
-    <!--=============p名称空间注入测试============-->
+    <!--&lt;!&ndash;=============p名称空间注入测试============&ndash;&gt;-->
 
-    <!-- p名称空间注入, 走set方法
-        1.导入P名称空间  xmlns:p="http://www.springframework.org/schema/p"
-        2.使用p:属性完成注入
-            |-值类型: p:属性名="值"
-            |-对象类型: p:属性名-ref="bean名称"
-     -->
-    <bean name="user6" class="com.qwm.spring1.bean.User" p:age="20" p:name="wenming" p:car-ref="car"/>
+    <!--&lt;!&ndash; p名称空间注入, 走set方法-->
+        <!--1.导入P名称空间  xmlns:p="http://www.springframework.org/schema/p"-->
+        <!--2.使用p:属性完成注入-->
+            <!--|-值类型: p:属性名="值"-->
+            <!--|-对象类型: p:属性名-ref="bean名称"-->
+     <!--&ndash;&gt;-->
+    <!--<bean name="user6" class="com.qwm.spring1.bean.User" p:age="20" p:name="wenming" p:car-ref="car"/>-->
 
-    <!--=============spel注入============-->
-   <!-- spel注入: spring Expression Language sping表达式语言-->
-    <bean name="user7" class="com.qwm.spring1.bean.User">
-        <property name="name" value="#{user2.name}"/>
-        <property name="age" value="#{user2.age}"/>
-        <property name="car" ref="car"/>
-    </bean>
+    <!--&lt;!&ndash;=============spel注入============&ndash;&gt;-->
+   <!--&lt;!&ndash; spel注入: spring Expression Language sping表达式语言&ndash;&gt;-->
+    <!--<bean name="user7" class="com.qwm.spring1.bean.User">-->
+        <!--<property name="name" value="#{user2.name}"/>-->
+        <!--<property name="age" value="#{user2.age}"/>-->
+        <!--<property name="car" ref="car"/>-->
+    <!--</bean>-->
 
 
-    <!--=============复杂类型注入============-->
-    <bean name="com1" class="com.qwm.spring1.bean.ComplexBean">
-        <!-- 如果数组中只准备注入一个值(对象),直接使用value|ref即可 -->
-        <property name="arr" value="arr_one"/>
-        <property name="list" value="list_one"/>
-        <property name="map">
-            <map>
-                <entry key="userName" value="wiming"/>
-                <entry key="mycar" value-ref="car"/>
-                <entry key-ref="car" value-ref="car"/>
-            </map>
-        </property>
-        <property name="prop">
-            <props>
-                <prop key="p1">p11111</prop>
-                <prop key="p2">p22222</prop>
-                <prop key="p3">p33333</prop>
-            </props>
-        </property>
-    </bean>
+    <!--&lt;!&ndash;=============复杂类型注入============&ndash;&gt;-->
+    <!--<bean name="com1" class="com.qwm.spring1.bean.ComplexBean">-->
+        <!--&lt;!&ndash; 如果数组中只准备注入一个值(对象),直接使用value|ref即可 &ndash;&gt;-->
+        <!--<property name="arr" value="arr_one"/>-->
+        <!--<property name="list" value="list_one"/>-->
+        <!--<property name="map">-->
+            <!--<map>-->
+                <!--<entry key="userName" value="wiming"/>-->
+                <!--<entry key="mycar" value-ref="car"/>-->
+                <!--<entry key-ref="car" value-ref="car"/>-->
+            <!--</map>-->
+        <!--</property>-->
+        <!--<property name="prop">-->
+            <!--<props>-->
+                <!--<prop key="p1">p11111</prop>-->
+                <!--<prop key="p2">p22222</prop>-->
+                <!--<prop key="p3">p33333</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
 
-    <bean name="com2" class="com.qwm.spring1.bean.ComplexBean">
-        <property name="arr">
-            <array>
-                <value>wiming</value>
-                <value>qiwenming</value>
-                <value>xiaoming</value>
-            </array>
-        </property>
-        <property name="list">
-            <list>
-                <value>小明</value>
-                <value>小小明</value>
-                <value>小明明</value>
-            </list>
-        </property>
-        <property name="map">
-            <map>
-                <entry key="userName" value="wiming"/>
-                <entry key="mycar" value-ref="car"/>
-                <entry key-ref="car" value-ref="car"/>
-            </map>
-        </property>
-        <property name="prop">
-            <props>
-                <prop key="p1">p11111</prop>
-                <prop key="p2">p22222</prop>
-                <prop key="p3">p33333</prop>
-            </props>
-        </property>
-    </bean>
+    <!--<bean name="com2" class="com.qwm.spring1.bean.ComplexBean">-->
+        <!--<property name="arr">-->
+            <!--<array>-->
+                <!--<value>wiming</value>-->
+                <!--<value>qiwenming</value>-->
+                <!--<value>xiaoming</value>-->
+            <!--</array>-->
+        <!--</property>-->
+        <!--<property name="list">-->
+            <!--<list>-->
+                <!--<value>小明</value>-->
+                <!--<value>小小明</value>-->
+                <!--<value>小明明</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="map">-->
+            <!--<map>-->
+                <!--<entry key="userName" value="wiming"/>-->
+                <!--<entry key="mycar" value-ref="car"/>-->
+                <!--<entry key-ref="car" value-ref="car"/>-->
+            <!--</map>-->
+        <!--</property>-->
+        <!--<property name="prop">-->
+            <!--<props>-->
+                <!--<prop key="p1">p11111</prop>-->
+                <!--<prop key="p2">p22222</prop>-->
+                <!--<prop key="p3">p33333</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
 
 </beans>
