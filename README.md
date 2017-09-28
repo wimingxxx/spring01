@@ -16,6 +16,8 @@
 
 [SSH与SSM学习之Spring06——Spring属性注入之p名称空间注入](blog/06.md)
 
+[SSH与SSM学习之Spring07——Spring属性注入之spel注入](blog/07.md)
+
 ----
 
 或者查看blog
