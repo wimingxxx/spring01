@@ -18,6 +18,8 @@
 
 [SSH与SSM学习之Spring07——Spring属性注入之spel注入](blog/07.md)
 
+[SSH与SSM学习之Spring08——Spring属性注入之复杂类型注入](blog/08.md)
+
 ----
 
 或者查看blog
