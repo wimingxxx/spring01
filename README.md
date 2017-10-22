@@ -22,6 +22,10 @@
 
 [SSH与SSM学习之Spring09——Spring使用注解配置](blog/09.md)
 
+[SSH与SSM学习之Spring10——Spring与junit整合测试](blog/10.md)
+
+[SSH与SSM学习之Spring11——Spring中的AOP](blog/11.md)
+
 ----
 
 或者查看blog
