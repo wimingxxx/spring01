@@ -1,6 +1,7 @@
 package com.qwm.spring2.b_junit;
 
 import com.qwm.spring2.bean.User;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -23,7 +24,8 @@ public class Demo {
     @Resource(name="user")
     private User user;
 
+    @Test
     public void test1(){
-//        System.out.println(user);
+        System.out.println(user);
     }
 }

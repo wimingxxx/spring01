@@ -16,9 +16,9 @@ import javax.annotation.Resource;
  * @date：2017/10/12 0012   23:34
  * @description：
  */
-//@Component("user")
-//	@Service("user") // service层
-//	@Controller("user") // web层
+//@Component("user") //下面三个和这个其实是一样的，只是下面三个起到标识的作用
+//@Service("user") // service层
+//@Controller("user") // web层
 @Repository("user")// dao层
 //指定对象的作用范围
 @Scope(scopeName="singleton")

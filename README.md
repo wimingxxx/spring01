@@ -20,6 +20,8 @@
 
 [SSH与SSM学习之Spring08——Spring属性注入之复杂类型注入](blog/08.md)
 
+[SSH与SSM学习之Spring09——Spring使用注解配置](blog/09.md)
+
 ----
 
 或者查看blog
