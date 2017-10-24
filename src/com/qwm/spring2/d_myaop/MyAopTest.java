@@ -3,6 +3,7 @@ package com.qwm.spring2.d_myaop;
 import org.junit.Test;
 
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @author：qiwenming
@@ -16,7 +17,8 @@ public class MyAopTest {
         //获取配置文件
         InputStream ips = MyAopTest.class.getResourceAsStream("config.properties");
         //获取到代理对象
-        Object object = new BeanFactory(ips).getBean("bean");
-        System.out.println(object.getClass().getName());
+        List list = (List)new BeanFactory(ips).getBean("bean");
+        System.out.println(list.getClass().getName());
+        list.add("wiming");
     }
 }

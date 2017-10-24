@@ -30,6 +30,8 @@
 
 [SSH与SSM学习之Spring13——动态代理之通知的使用](blog/13.md)
 
+[SSH与SSM学习之Spring14——动态代理之自己的AOP框架](blog/14.md)
+
 ----
 
 或者查看blog
