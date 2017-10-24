@@ -29,11 +29,17 @@ public class Demo2 {
 
             @Override
             public void delete() {
+                System.out.println("删除用户");
             }
         }, new Advice() {
             @Override
             public void before() {
-                System.out.println("----------");
+                System.out.println("------before----");
+            }
+
+            @Override
+            void after() {
+                System.out.println("-----after-----");
             }
         });
 
