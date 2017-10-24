@@ -28,6 +28,8 @@
 
 [SSH与SSM学习之Spring12——动态代理之实现](blog/12.md)
 
+[SSH与SSM学习之Spring13——动态代理之通知的使用](blog/13.md)
+
 ----
 
 或者查看blog
