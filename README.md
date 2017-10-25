@@ -36,6 +36,8 @@
 
 [SSH与SSM学习之Spring16——Spring中AOP之使用配置文件配置](blog/16.md)
 
+[SSH与SSM学习之Spring17——Spring中AOP之使用注解配置](blog/17.md)
+
 ----
 
 或者查看blog
