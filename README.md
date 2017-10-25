@@ -34,6 +34,8 @@
 
 [SSH与SSM学习之Spring15——cglib代理](blog/15.md)
 
+[SSH与SSM学习之Spring16——Spring中AOP之使用配置文件配置](blog/16.md)
+
 ----
 
 或者查看blog
