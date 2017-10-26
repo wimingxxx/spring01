@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    &lt;!&ndash;1. 将连接池放入到spring容器中&ndash;&gt;
+    <bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl" value="jdbc:mysql:///stest"/>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="user" value="root"/>
+        <property name="password" value="xm123456"/>
+    </bean>-->
+
+    <!-- 指定spring读取db.properties配置 -->
+    <context:property-placeholder location="classpath:com/qwm/spring3/db.properties"/>
+
+    <!-- 1.将连接池放入spring容器 -->
+    <bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"/>
+        <property name="driverClass" value="${jdbc.driverClass}"/>
+        <property name="user" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--2. 将JdbcTemplate放入到spring容器中-->
+    <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--3. 将UserDaoImpl放入到容器中-->
+    <bean name="userDao" class="com.qwm.spring3.dao.UserDaoImpl">
+        <property name="jt" ref="jdbcTemplate"/>
+    </bean>
+
+
+    <!--继承了 JdbcDaoSupport 类的 Dao 的配置，我们可以不用配置配置 JdbcTemplate-->
+    <bean name="userDao2" class="com.qwm.spring3.dao.UserDaoImpl2">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>
