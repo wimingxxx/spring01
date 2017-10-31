@@ -46,6 +46,10 @@
 
 [SSH与SSM学习之Spring21——Spring事务之代码方式管理事务(基本不用)](blog/21.md)
 
+[SSH与SSM学习之Spring22——Spring事务之xml配置方式管理事务](blog/22.md)
+
+[SSH与SSM学习之Spring23——Spring事务之注解配置方式管理事务](blog/23.md)
+
 ----
 
 或者查看blog
